@@ -1,11 +1,23 @@
 import { FiDownload } from "react-icons/fi";
+import { TypeAnimation } from "react-type-animation";
 
 function Landing() {
     return (
         <div className="relative flex flex-col md:flex-row items-center justify-center py-2 px-6 md:px-16 w-full h-screen md:h-[80vh] lg:h-[80vh] bg-gray-100">
             <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left gap-y-4 mb-8 md:mb-0">
                 <span className="text-4xl md:text-5xl text-gray-800 font-bold">Hi, I am Subham</span>
-                <span className="text-xl md:text-2xl text-gray-600 font-semibold">A Full Stack Developer and ML Enthusiast</span>
+                <TypeAnimation
+                    sequence={[
+                    'A Full Stack Developer',
+                    2000, 
+                    'A Machine Learning Enthusiast',
+                    2000, 
+                    ]}
+                    wrapper="span"
+                    cursor={true}
+                    repeat={Infinity}
+                    className="text-xl md:text-2xl text-gray-600 font-semibold"
+                />
                 <a
                     href="/files/resume.pdf"  
                     download 
