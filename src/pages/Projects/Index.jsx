@@ -39,7 +39,7 @@ function Index() {
                 />
                 <Card
                     title="Ecommerce"
-                    desc="A eCommerce website built with React and Tailwind CSSt"
+                    desc="A eCommerce website built with React and Tailwind CSS"
                     image="https://media.istockphoto.com/id/1428709516/photo/shopping-online-woman-hand-online-shopping-on-laptop-computer-with-virtual-graphic-icon.jpg?s=612x612&w=0&k=20&c=ROAncmFL4lbSQdU4VOhyXu-43ngzfEqHE5ZZAw5FtYk="
                     github="https://github.com/subham-behera/Ecommerce"
                     live="#"
