@@ -3,7 +3,7 @@ function Profile() {
         <div className="flex flex-col lg:flex-row px-4 sm:px-6 lg:px-8 py-6 lg:py-8 max-w-screen-lg mx-auto">
             <div id="left" className="flex-shrink-0 lg:w-1/5 px-4 py-4 lg:px-6 lg:py-6">
                 <img
-                    src="https://media-ccu1-1.cdn.whatsapp.net/v/t61.24694-24/427442420_811786320615665_8755374969883142632_n.jpg?ccb=11-4&oh=01_Q5AaIH_mGSN-zA-MZmwhm9BqXztPV7U91l4Xdfs-SvASNN4c&oe=66DC1ED4&_nc_sid=5e03e0&_nc_cat=102"
+                    src="personal.jpg"
                     alt="Profile"
                     className="w-full h-48 object-cover rounded-lg shadow-md"
                 />

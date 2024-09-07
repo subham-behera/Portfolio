@@ -28,7 +28,7 @@ function Landing() {
                 </a>
             </div>
             <img 
-                src="https://media-ccu1-1.cdn.whatsapp.net/v/t61.24694-24/427442420_811786320615665_8755374969883142632_n.jpg?ccb=11-4&oh=01_Q5AaIH_mGSN-zA-MZmwhm9BqXztPV7U91l4Xdfs-SvASNN4c&oe=66DC1ED4&_nc_sid=5e03e0&_nc_cat=102" 
+                src="personal.jpg" 
                 alt="Profile"
                 className="w-48 h-48 md:w-60 md:h-60 object-cover rounded-full border-4 border-blue-500 shadow-2xl"
             />
