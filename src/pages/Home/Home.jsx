@@ -13,18 +13,18 @@ function Home() {
                 <span className="py-6 text-center text-2xl font-bold">Full Stack Projects</span>
                 <div className="flex flex-wrap justify-center gap-6">
                     <Card
-                        title="BlogSite"
-                        desc="A full-featured blogging platform"
+                        title="Blogify"
+                        desc="A full-featured blogging platform for creating & managing blogs."
                         image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D"
                         github="https://github.com/subham-behera/Blog"
-                        live="#"
+                        live="https://devblogify.netlify.app/"
                     />
                     <Card
-                        title="Ecommerce"
-                        desc="A eCommerce website built with React and Tailwind CSS"
-                        image="https://media.istockphoto.com/id/1428709516/photo/shopping-online-woman-hand-online-shopping-on-laptop-computer-with-virtual-graphic-icon.jpg?s=612x612&w=0&k=20&c=ROAncmFL4lbSQdU4VOhyXu-43ngzfEqHE5ZZAw5FtYk="
-                        github="https://github.com/subham-behera/Ecommerce"
-                        live="#"
+                        title="SWITCH Club Website"
+                        desc="A fully responsive club website showcasing club activites & more."
+                        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1k6vR7YjBKylpOqRIXuk9iVEjlTfxy4x-Q&s"
+                        github="https://github.com/subham-behera/club"
+                        live="https://switchclub.netlify.app/"
                     />
                     <Card
                         title="SnapExtension"
