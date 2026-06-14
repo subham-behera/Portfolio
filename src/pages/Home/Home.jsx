@@ -1,45 +1,106 @@
+import { Link } from "react-router-dom";
+import { FaCode, FaCloud, FaTools, FaChartLine, FaArrowRight } from "react-icons/fa";
 import Card from "../../components/Card";
 import Landing from "./Landing";
 
-
 function Home() {
+    // Spotlight Skills Categories
+    const skillSpotlights = [
+        {
+            icon: <FaCode className="text-blue-600 text-2xl" />,
+            title: "Full-Stack Dev",
+            desc: "Building dynamic interfaces and solid backend systems using React, Java Spring Boot, and MySQL database."
+        },
+        {
+            icon: <FaCloud className="text-indigo-600 text-2xl" />,
+            title: "Cloud Services",
+            desc: "Architecting resource deployments on Microsoft Azure, configuring VNets, load balancers, and structured storage."
+        },
+        {
+            icon: <FaTools className="text-blue-500 text-2xl" />,
+            title: "DevOps & CI/CD",
+            desc: "Implementing automated build pipelines and container orchestration with Jenkins, Docker, Kubernetes, and Terraform."
+        },
+        {
+            icon: <FaChartLine className="text-indigo-500 text-2xl" />,
+            title: "Monitoring & Reliability",
+            desc: "Setting up real-time application health metrics and dashboards using Prometheus, Grafana, and alerting hooks."
+        }
+    ];
+
     return (
-        <div>
-            <Landing/>
-            <div className="text-center mt-6 mb-4">
-                <span className="text-4xl font-semibold">My Projects</span>
-            </div>
-            <div className="p-6 flex flex-col gap-y-6">
-                <span className="py-6 text-center text-2xl font-bold">Full Stack Projects</span>
-                <div className="flex flex-wrap justify-center gap-6">
+        <div className="bg-[#fafafa]">
+            {/* Hero Section */}
+            <Landing />
+
+            {/* Core Competencies Spotlight */}
+            <section className="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-slate-100">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                    <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Core Technical Focus</h2>
+                    <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+                        A quick overview of my primary fields of expertise. I bridge the gap between building software and shipping it reliably.
+                    </p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {skillSpotlights.map((skill, idx) => (
+                        <div key={idx} className="p-6 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div className="w-12 h-12 rounded-lg bg-slate-50 flex items-center justify-center mb-4">
+                                {skill.icon}
+                            </div>
+                            <h3 className="text-lg font-bold text-slate-800 mb-2">{skill.title}</h3>
+                            <p className="text-xs text-slate-500 leading-relaxed">{skill.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Highlighted Projects */}
+            <section className="py-16 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-slate-100">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                    <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Projects</h2>
+                    <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+                        Handpicked applications showcasing full-stack design and utility implementations.
+                    </p>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-8">
                     <Card
                         title="Blogify"
-                        desc="A full-featured blogging platform for creating & managing blogs."
-                        image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D"
+                        desc="A full-featured blogging platform for creating and managing blogs, featuring rich text formatting and secure authorization."
+                        image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60"
                         github="https://github.com/subham-behera/Blog"
                         live="https://devblogify.netlify.app/"
+                        tags={["React", "Spring Boot", "MySQL", "REST API"]}
                     />
                     <Card
                         title="SWITCH Club Website"
-                        desc="A fully responsive club website showcasing club activites & more."
-                        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1k6vR7YjBKylpOqRIXuk9iVEjlTfxy4x-Q&s"
+                        desc="A fully responsive, high-performance club website showcasing active student workshops, event registrations, and schedules."
+                        image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60"
                         github="https://github.com/subham-behera/club"
                         live="https://switchclub.netlify.app/"
+                        tags={["React", "Tailwind CSS", "Mobile Responsive"]}
                     />
                     <Card
                         title="SnapExtension"
-                        desc="Chrome extension to capture full-page screenshots with a single click."
-                        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZNAhttcNcULNFhGScMwHu8ssTTUa-d2vlgA&s"
+                        desc="A lightweight Chrome extension to capture full-page screenshots instantly with a single button click."
+                        image="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop&q=60"
                         github="https://github.com/subham-behera/SnapExtension"
                         live="#"
+                        tags={["JavaScript", "HTML5", "Chrome Extensions API"]}
                     />
                 </div>
-                <div className="text-center">
-                    <a href="/projects"
-                    className="mt-6 px-3 py-2 bg-blue-500 text-white shadow-sm hover:shadow-2xl rounded-md w-fit"
-                    >More Projects</a>
+
+                <div className="text-center mt-12">
+                    <Link 
+                        to="/projects"
+                        className="inline-flex items-center gap-x-2 px-6 py-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold text-sm shadow-sm rounded-xl transition duration-300 transform hover:-translate-y-0.5"
+                    >
+                        <span>View All Projects</span>
+                        <FaArrowRight className="text-slate-400 text-xs" />
+                    </Link>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

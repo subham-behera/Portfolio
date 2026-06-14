@@ -1,61 +1,131 @@
-// Index.js
+import { useState, useEffect } from "react";
 import Card from "../../components/Card";
 
 function Index() {
+    const [filter, setFilter] = useState("all");
+
+    useEffect(() => {
+        document.title = "Projects | Subham Behera";
+        window.scrollTo(0, 0);
+    }, []);
+
+    const projects = [
+        {
+            title: "Blogify",
+            desc: "A full-featured blogging platform for creating and managing blogs, featuring rich text formatting and secure authorization.",
+            image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/Blog",
+            live: "https://devblogify.netlify.app/",
+            category: "fullstack",
+            tags: ["React", "Spring Boot", "MySQL", "REST API"]
+        },
+        {
+            title: "SWITCH Club Website",
+            desc: "A fully responsive, high-performance club website showcasing active student workshops, event registrations, and schedules.",
+            image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/club",
+            live: "https://switchclub.netlify.app/",
+            category: "fullstack",
+            tags: ["React", "Tailwind CSS", "Mobile Responsive"]
+        },
+        {
+            title: "SnapExtension",
+            desc: "A lightweight Chrome extension to capture full-page screenshots instantly with a single button click.",
+            image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/SnapExtension",
+            live: "#",
+            category: "fullstack",
+            tags: ["JavaScript", "HTML5", "Chrome Extensions API"]
+        },
+        {
+            title: "Sentiment Analysis",
+            desc: "Analyze and classify the emotional tone of text input using advanced Natural Language Processing models.",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/Sentiment-Analysis",
+            live: "https://sentiment-analysis-mpkundhkfnnmnt7cpjv2wv.streamlit.app/",
+            category: "datascience",
+            tags: ["Python", "NLP", "Streamlit", "Scikit-Learn"]
+        },
+        {
+            title: "Diabetes Prediction",
+            desc: "A machine learning based diagnostic system to predict diabetes probability based on diagnostic health factors.",
+            image: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/Diabetes-Prediction",
+            live: "https://diabetes-prediction-ewgg4ssilj5pm58fd8dhi9.streamlit.app/",
+            category: "datascience",
+            tags: ["Python", "Machine Learning", "Streamlit", "Pima Dataset"]
+        },
+        {
+            title: "Crops Recommendation",
+            desc: "A smart agriculture helper recommending optimized crop options based on soil properties, moisture, and weather inputs.",
+            image: "https://images.unsplash.com/photo-1593113630400-ea4288922497?w=600&auto=format&fit=crop&q=60",
+            github: "https://github.com/subham-behera/GoAgro",
+            live: "#",
+            category: "datascience",
+            tags: ["Python", "Random Forest", "Agri-Tech", "Pandas"]
+        }
+    ];
+
+    const filteredProjects = filter === "all" 
+        ? projects 
+        : projects.filter(p => p.category === filter);
+
+    const filterButtonClass = (cat) => 
+        `px-5 py-2 text-sm font-medium rounded-xl transition duration-300 ${
+            filter === cat 
+                ? "bg-blue-600 text-white shadow-md shadow-blue-500/10" 
+                : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50"
+        }`;
+
     return (
-        <div className="p-6 flex flex-col gap-y-6">
-            <span className="py-6 text-center text-2xl font-bold">Full Stack Projects</span>
-            <div className="flex flex-wrap justify-center gap-6">
-                <Card
-                    title="Blogify"
-                    desc="A full-featured blogging platform for creating & managing blogs."
-                    image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D"
-                    github="https://github.com/subham-behera/Blog"
-                    live="https://devblogify.netlify.app/"
-                />
-                <Card
-                    title="SWITCH Club Website"
-                    desc="A fully responsive club website showcasing club activites & more."
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1k6vR7YjBKylpOqRIXuk9iVEjlTfxy4x-Q&s"
-                    github="https://github.com/subham-behera/club"
-                    live="https://switchclub.netlify.app/"
-                />
-                <Card
-                    title="SnapExtension"
-                    desc="Chrome extension to capture full-page screenshots with a single click."
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZNAhttcNcULNFhGScMwHu8ssTTUa-d2vlgA&s"
-                    github="https://github.com/subham-behera/SnapExtension"
-                    live="#"
-                />
+        <div className="py-12 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto min-h-[80vh] bg-[#fafafa]">
+            {/* Header */}
+            <div className="text-center max-w-2xl mx-auto mb-10">
+                <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Project Showcases</h1>
+                <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+                    A list of web development and data science applications I have designed, built, and deployed.
+                </p>
             </div>
-            <span className="py-6 text-center text-2xl font-bold">Data Science Projects</span>
-            <div className="flex flex-wrap justify-center gap-6">
-                <Card
-                    title="Sentiment Analysis"
-                    desc="Check the nature of the statement"
-                    image="https://www.shutterstock.com/image-vector/sentiment-analysis-test-emotions-by-260nw-2246863191.jpg"
-                    github="https://github.com/subham-behera/Sentiment-Analysis"
-                    live="https://sentiment-analysis-mpkundhkfnnmnt7cpjv2wv.streamlit.app/"
-                />
-                <Card
-                    title="Diabetes Prediction"
-                    desc="Predict if a person is diabetic or not"
-                    image="https://watermark.lovepik.com/photo/40214/8038.jpg_wh1200.jpg"
-                    github="https://github.com/subham-behera/Diabetes-Prediction"
-                    live="https://diabetes-prediction-ewgg4ssilj5pm58fd8dhi9.streamlit.app/"
-                />
-                <Card
-                    title="Crops Recommendation"
-                    desc="Check the nature of the statement"
-                    image="https://st3.depositphotos.com/1177973/16777/i/450/depositphotos_167778562-stock-photo-concept-of-smart-agriculture-and.jpg"
-                    github="https://github.com/subham-behera/GoAgro"
-                    live="#"
-                />
+
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+                <button onClick={() => setFilter("all")} className={filterButtonClass("all")}>
+                    All Projects
+                </button>
+                <button onClick={() => setFilter("fullstack")} className={filterButtonClass("fullstack")}>
+                    Full Stack
+                </button>
+                <button onClick={() => setFilter("datascience")} className={filterButtonClass("datascience")}>
+                    Data Science & ML
+                </button>
             </div>
-            <div className="text-center">
-                <a href="https://github.com/subham-behera"
-                className="mt-6 px-3 py-2 bg-blue-500 text-white shadow-sm hover:shadow-2xl rounded-md w-fit"
-                >More Projects</a>
+
+            {/* Grid */}
+            <div className="flex flex-wrap justify-center gap-8 animate-fade-in-up">
+                {filteredProjects.map((project, idx) => (
+                    <Card
+                        key={idx}
+                        title={project.title}
+                        desc={project.desc}
+                        image={project.image}
+                        github={project.github}
+                        live={project.live}
+                        tags={project.tags}
+                    />
+                ))}
+            </div>
+
+            {/* GitHub Callout */}
+            <div className="text-center mt-16 pt-8 border-t border-slate-200/60 max-w-md mx-auto">
+                <p className="text-slate-500 text-sm mb-4">Want to see more of my code exploration and scripts?</p>
+                <a 
+                    href="https://github.com/subham-behera"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-xl hover:bg-slate-800 transition duration-300 shadow-md"
+                >
+                    Visit My GitHub Profile
+                </a>
             </div>
         </div>
     );
