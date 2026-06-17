@@ -65,7 +65,7 @@ function Form() {
                                 <div>
                                     <h4 className="font-semibold text-slate-700">Email Address</h4>
                                     <a href="mailto:subham.behera.dev@gmail.com" className="text-slate-500 hover:text-blue-600 transition-colors">
-                                        subham.behera.dev@gmail.com
+                                        subhambehera5547@gmail.com
                                     </a>
                                 </div>
                             </div>

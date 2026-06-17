@@ -70,7 +70,7 @@ function Profile() {
                             <div className="flex items-center gap-x-3">
                                 <FaEnvelope className="text-slate-400 text-lg flex-shrink-0" />
                                 <a href="mailto:subham.behera.dev@gmail.com" className="hover:text-blue-600 transition-colors">
-                                    subham.behera.dev@gmail.com
+                                    subhambehera5547@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ function Profile() {
                     {/* Bio Paragraphs */}
                     <div className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm">
                         <h3 className="text-xl font-bold text-slate-800 mb-4 pb-2 border-b border-slate-50">Professional Summary</h3>
-                        <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
+                        <div className="space-y-4 text-sm text-slate-600 leading-relaxed text-justify">
                             <p>
                                 My journey in software development began with a deep curiosity about how technology can solve complex problems. Early on, I immersed myself in learning various programming languages and frameworks, which laid the groundwork for my proficiency in both front-end and back-end development. Over the years, I've worked on diverse projects, from building dynamic web applications to implementing secure cloud infrastructures.
                             </p>
@@ -141,7 +141,7 @@ function Profile() {
                             {/* Education Item */}
                             <div className="relative pl-8">
                                 <div className="absolute -left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-blue-600 border-2 border-white"></div>
-                                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">2020 - 2024</span>
+                                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">2022 - 2026</span>
                                 <h4 className="text-lg font-bold text-slate-800 mt-1">Bachelor of Technology in Computer Science</h4>
                                 <p className="text-sm font-medium text-slate-500">Silicon University</p>
                                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">
@@ -153,7 +153,7 @@ function Profile() {
                             <div className="relative pl-8">
                                 <div className="absolute -left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-600 border-2 border-white"></div>
                                 <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Active Member</span>
-                                <h4 className="text-lg font-bold text-slate-800 mt-1">Coding Club Mentor & Facilitator</h4>
+                                <h4 className="text-lg font-bold text-slate-800 mt-1">Coding Club Member & Tech Lead</h4>
                                 <p className="text-sm font-medium text-slate-500">Silicon University Tech Club</p>
                                 <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                                     Contributed to hands-on workshops and mentoring sessions on Full-Stack Development and DevOps tools, fostering a collaborative learning environment and encouraging peers to build deployable systems.
