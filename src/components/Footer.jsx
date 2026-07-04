@@ -1,4 +1,4 @@
-import { BsTwitterX } from "react-icons/bs";
+
 import { FaDev, FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
 import { IoLogoStackoverflow } from "react-icons/io5";
@@ -53,15 +53,7 @@ function Footer() {
                     >
                         <IoLogoLinkedin />
                     </a>
-                    <a 
-                        href="https://x.com/subhambehera_" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-slate-400 hover:text-sky-500 transition-all duration-200 hover:scale-110"
-                        aria-label="Twitter X"
-                    >
-                        <BsTwitterX />
-                    </a>
+
                     <a 
                         href="https://dev.to/subham_behera" 
                         target="_blank" 

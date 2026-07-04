@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaCode, FaCloud, FaTools, FaChartLine, FaArrowRight } from "react-icons/fa";
 import Card from "../../components/Card";
 import Landing from "./Landing";
+import allProjects from "../../data/projects.json";
 
 function Home() {
     // Spotlight Skills Categories
@@ -27,6 +28,8 @@ function Home() {
             desc: "Setting up real-time application health metrics and dashboards using Prometheus, Grafana, and alerting hooks."
         }
     ];
+
+    const featuredProjects = allProjects.filter(p => p.featured);
 
     return (
         <div className="bg-[#fafafa]">
@@ -65,30 +68,17 @@ function Home() {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-8">
-                    <Card
-                        title="Blogify"
-                        desc="A full-featured blogging platform for creating and managing blogs, featuring rich text formatting and secure authorization."
-                        image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60"
-                        github="https://github.com/subham-behera/Blog"
-                        live="https://devblogify.netlify.app/"
-                        tags={["React", "Spring Boot", "MySQL", "REST API"]}
-                    />
-                    <Card
-                        title="SWITCH Club Website"
-                        desc="A fully responsive, high-performance club website showcasing active student workshops, event registrations, and schedules."
-                        image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60"
-                        github="https://github.com/subham-behera/club"
-                        live="https://switchclub.netlify.app/"
-                        tags={["React", "Tailwind CSS", "Mobile Responsive"]}
-                    />
-                    <Card
-                        title="SnapExtension"
-                        desc="A lightweight Chrome extension to capture full-page screenshots instantly with a single button click."
-                        image="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop&q=60"
-                        github="https://github.com/subham-behera/SnapExtension"
-                        live="#"
-                        tags={["JavaScript", "HTML5", "Chrome Extensions API"]}
-                    />
+                    {featuredProjects.map((project, idx) => (
+                        <Card
+                            key={idx}
+                            title={project.title}
+                            desc={project.desc}
+                            image={project.image}
+                            github={project.github}
+                            live={project.live}
+                            tags={project.tags}
+                        />
+                    ))}
                 </div>
 
                 <div className="text-center mt-12">
@@ -105,4 +95,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Home;

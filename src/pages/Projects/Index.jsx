@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../../components/Card";
+import allProjects from "../../data/projects.json";
 
 function Index() {
     const [filter, setFilter] = useState("all");
@@ -9,89 +10,7 @@ function Index() {
         window.scrollTo(0, 0);
     }, []);
 
-    const projects = [
-        {
-            title: "Card & Badge Studio",
-            desc: "An interactive card designer supporting 15 customizable templates (FIFA FUT, Pokémon, Yu-Gi-Oh!, MTG, and more) with a live real-time editor, 3D holographic tilt effects, and high-resolution PNG export at 3× pixel ratio.",
-            image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/Card-Maker",
-            live: "#",
-            category: "fullstack",
-            tags: ["React 19", "Vite", "TailwindCSS 4", "html-to-image", "canvas-confetti"]
-        },
-        {
-            title: "Route Optimiser",
-            desc: "A full-stack graph-based route optimizer implementing 5 pathfinding algorithms — Dijkstra, A*, BFS, DFS, and Yen's K-Shortest Paths — with real-time performance benchmarking, interactive SVG map canvas, and algorithm comparison tooling.",
-            image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/route-optimiser",
-            live: "#",
-            category: "fullstack",
-            tags: ["React", "Vite", "Python", "FastAPI", "Graph Algorithms"]
-        },
-        {
-            title: "Expense Tracker",
-            desc: "A full-stack personal finance tracker featuring CRUD operations on transactions, real-time state sync, useMemo-powered multi-dimensional filtering & sorting, a live budget progress indicator with conditional risk coloring, and a Wallet Spend Distribution visualizer.",
-            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/expense-tracker",
-            live: "https://mintwise.netlify.app/",
-            category: "fullstack",
-            tags: ["React.js", "TailwindCSS", "useMemo", "Component Architecture"]
-        },
-        {
-            title: "To-Do App",
-            desc: "A Task Management SPA with CRUD operations, nested subtasks, multi-dimensional filtering & sorting, and color-coded categories — fully client-side via React Context + localStorage.",
-            image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/To-Do",
-            live: "https://mydailydo.netlify.app/",
-            category: "fullstack",
-            tags: ["React", "Context API", "localStorage", "Custom Hooks"]
-        },
-        {
-            title: "SWITCH Club Website",
-            desc: "A fully responsive, high-performance club website showcasing active student workshops, event registrations, and schedules.",
-            image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/club",
-            live: "https://switchclub.netlify.app/",
-            category: "fullstack",
-            tags: ["React", "Tailwind CSS", "Mobile Responsive"]
-        },
-        {
-            title: "Blogify",
-            desc: "A full-featured blogging platform for creating and managing blogs, featuring rich text formatting and secure authorization.",
-            image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/Blog",
-            live: "https://devblogify.netlify.app/",
-            category: "fullstack",
-            tags: ["React", "Spring Boot", "MySQL", "REST API"]
-        },
-        {
-            title: "Sentiment Analysis",
-            desc: "Analyze and classify the emotional tone of text input using advanced Natural Language Processing models.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/Sentiment-Analysis",
-            live: "https://sentiment-analysis-mpkundhkfnnmnt7cpjv2wv.streamlit.app/",
-            category: "datascience",
-            tags: ["Python", "NLP", "Streamlit", "Scikit-Learn"]
-        },
-        {
-            title: "Diabetes Prediction",
-            desc: "A machine learning based diagnostic system to predict diabetes probability based on diagnostic health factors.",
-            image: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/Diabetes-Prediction",
-            live: "https://diabetes-prediction-ewgg4ssilj5pm58fd8dhi9.streamlit.app/",
-            category: "datascience",
-            tags: ["Python", "Machine Learning", "Streamlit", "Pima Dataset"]
-        },
-        {
-            title: "Crops Recommendation",
-            desc: "A smart agriculture helper recommending optimized crop options based on soil properties, moisture, and weather inputs.",
-            image: "https://images.unsplash.com/photo-1593113630400-ea4288922497?w=600&auto=format&fit=crop&q=60",
-            github: "https://github.com/subham-behera/GoAgro",
-            live: "#",
-            category: "datascience",
-            tags: ["Python", "Random Forest", "Agri-Tech", "Pandas"]
-        }
-    ];
+    const projects = allProjects;
 
     const filteredProjects = filter === "all" 
         ? projects 
